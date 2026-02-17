@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouzbek Global · Refonte SI · Rapport direction · 35 slides · Note 19/20</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .slide {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.3);
+            overflow: hidden;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .slide-header {
+            background: linear-gradient(105deg, #0a2c3d 0%, #1e4a6d 100%);
+            color: white;
+            padding: 2rem 3rem;
+            position: relative;
+        }
+
+        .slide-header::before {
+            content: "⚡";
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            font-size: 8rem;
+            opacity: 0.1;
+            transform: rotate(-10deg);
+        }
+
+        .slide-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: white;
+            border: none;
+        }
+
+        .slide-header .slide-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .slide-content {
+            padding: 2.5rem 3rem;
+            background: white;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1b4a6b;
+            margin: 1.8rem 0 1rem 0;
+            background: linear-gradient(135deg, #1b4a6b 0%, #667eea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin: 1.2rem 0 0.5rem 0;
+            border-left: 4px solid #667eea;
+            padding-left: 1rem;
+        }
+
+        .section-intro {
+            background: linear-gradient(to right, #f8fafc, #ffffff);
+            border-left: 6px solid #667eea;
+            padding: 1.2rem 1.8rem;
+            margin-bottom: 1.8rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .section-intro strong {
+            color: #1b4a6b;
+        }
+
+        .justification-box {
+            background: #f0f9ff;
+            border-left: 6px solid #667eea;
+            padding: 1.5rem 2rem;
+            border-radius: 0 30px 30px 0;
+            margin: 1.5rem 0;
+        }
+
+        .meta-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            opacity: 0.7;
+        }
+
+        .meta-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .badge-plus {
+            background: linear-gradient(135deg, #f6b224 0%, #ffd966 100%);
+            color: #0a2c3d;
+            font-weight: 800;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-left: 1rem;
+            box-shadow: 0 4px 10px rgba(246,178,36,0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px -10px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            padding: 1rem 1.2rem;
+            text-align: left;
+        }
+
+        td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #e2e8f0;
+            background: white;
+        }
+
+        tr:hover td {
+            background: #f8faff;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%);
+            border: 1px solid #e0e7ff;
+            border-radius: 24px;
+            padding: 1.8rem 1rem;
+            text-align: center;
+            box-shadow: 0 15px 25px -10px rgba(102,126,234,0.2);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #4a5568;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .image-container {
+            margin: 2rem 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 1px solid #eef2f6;
+        }
+
+        .image-caption {
+            background: #f9fafc;
+            padding: 1rem 1.5rem;
+            font-size: 0.95rem;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .image-caption span {
+            font-family: 'SF Mono', monospace;
+            background: #edf2f7;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: #2d4b6e;
+            margin-left: 0.5rem;
+        }
+
+        hr {
+            border: none;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+            margin: 2rem 0;
+            border-radius: 2px;
+        }
+
+        ul, ol {
+            margin-left: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .signature-block {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 3px solid #e0e7ff;
+        }
+
+        .signature-line {
+            width: 250px;
+            border-bottom: 3px solid #667eea;
+            margin: 0.8rem 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media print {
+            body { background: white; }
+            .slide { box-shadow: none; border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== SLIDE 1 – HEADER ÉQUIPE ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>REFONTE ET SÉCURISATION DU SYSTÈME D'INFORMATION</h2>
+        <div class="slide-subtitle">Ouzbek Global · Rapport d'architecture · Version Direction</div>
+        <div class="meta-grid">
+            <div class="meta-item"><span class="meta-label">Date</span><span class="meta-value">17 février 2026</span></div>
+            <div class="meta-item"><span class="meta-label">Version</span><span class="meta-value">2.0 – Finale</span></div>
+            <div class="meta-item"><span class="meta-label">Rédacteurs</span><span class="meta-value">MALKI · ROHART · SUGIRA · YILMAZ</span></div>
+            <div class="meta-item"><span class="meta-label">Statut</span><span class="meta-value">✅ Validé</span></div>
+            <div class="meta-item"><span class="meta-label">Domaine</span><span class="meta-value">ouzbek.global</span></div>
+        </div>
+    </div>
+    <div class="slide-content">
+        <div class="image-container">
+            <img src="Images/logo_equipe.png" alt="Logo Ouzbek Global et photo équipe projet" style="width: 100%; height: auto; display: block;">
+            
+        </div>
+        <div style="font-size:1.4rem; font-style:italic; color:#1b4a6b; text-align:center; padding:2rem; background:#f0f9ff; border-radius:30px;">
+            “Une infrastructure moderne, sécurisée et conforme, pensée pour la croissance et la résilience.”
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 2 – SYNTHÈSE EXÉCUTIVE ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>1. SYNTHÈSE EXÉCUTIVE</h2>
+        <div class="slide-subtitle">Contexte, défis et objectifs stratégiques</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>🎯 Le défi :</strong> Ouzbek Global, entreprise de vente en ligne d'articles de sport en forte croissance, devait faire face à plusieurs défis majeurs.
+        </div>
+        
+        <table>
+            <tr><th>Défi</th><th>Impact métier</th></tr>
+            <tr><td><strong>Infrastructure obsolète</strong></td><td>Architecture peu segmentée, augmentation des risques de sécurité, absence de résilience</td></tr>
+            <tr><td><strong>Absence de traçabilité</strong></td><td>Impossible d'auditer les accès et les événements de sécurité, non-conformité RGPD</td></tr>
+            <tr><td><strong>Outils hétérogènes</strong></td><td>Gmail, Yahoo, partages non structurés — image professionnelle dégradée, productivité limitée</td></tr>
+            <tr><td><strong>Mise en conformité</strong></td><td>Nécessité de répondre aux exigences RGPD, ANSSI, ISO 27001 pour sécuriser la croissance</td></tr>
+        </table>
+
+        <p><strong>L'objectif du projet</strong> : concevoir, déployer et sécuriser une infrastructure virtualisée moderne, adaptée à une PME en croissance, avec une architecture segmentée et des services fiables.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card"><span class="stat-number">100%</span> <div class="stat-label">Objectifs atteints</div></div>
+            <div class="stat-card"><span class="stat-number">15+</span> <div class="stat-label">Serveurs déployés</div></div>
+            <div class="stat-card"><span class="stat-number">4</span> <div class="stat-label">Zones réseau</div></div>
+            <div class="stat-card"><span class="stat-number">96</span> <div class="stat-label">Score sécurité</div></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== SLIDE 3 – ARCHITECTURE INITIALE (PROBLÈME) ==================== -->
+<section class="slide">
+    <div class="slide-header" style="background: linear-gradient(105deg, #b91c1c 0%, #991b1b 100%);">
+        <h2>2. ARCHITECTURE INITIALE</h2>
+        <div class="slide-subtitle">L'existant : une infrastructure non segmentée et à risques</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro" style="border-left-color: #b91c1c;">
+            <strong>⚠️ Diagnostic de l'existant :</strong> L'architecture actuelle d'Ouzbek Global est peu adaptée, insuffisamment sécurisée et ne répond pas aux exigences de disponibilité, de conformité RGPD et aux bonnes pratiques ANSSI/ISO.
+        </div>
+
+        <div class="image-container">
+            <img src="Images/architecture_initiale.png" alt="Schéma architecture initiale" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Architecture initiale - réseau plat non segmenté 
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+            <div>
+                <h3 style="color: #b91c1c;">📉 Faiblesses techniques</h3>
+                <ul style="list-style-type: none;">
+                    <li style="margin: 1rem 0;">🔴 <strong>Architecture réseau non segmentée</strong> : pas de séparation entre LAN, serveurs et DMZ</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Plan d'adressage unique</strong> : un seul réseau /24 pour tous les équipements</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Absence de DMZ</strong> : les serveurs sont directement exposés</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Cloisonnement insuffisant</strong> : réseau utilisateurs et serveurs mélangés</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Aucune traçabilité</strong> : logs inexistants ou non centralisés</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Pas de supervision</strong> : aucun monitoring des services critiques</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Sauvegarde absente</strong> : aucune stratégie de sauvegarde 3-2-1</li>
+                </ul>
+            </div>
+            <div>
+                <h3 style="color: #b91c1c;">⚠️ Risques métier</h3>
+                <ul style="list-style-type: none;">
+                    <li style="margin: 1rem 0;">🔴 <strong>Surface d'attaque maximale</strong> : un pirate ayant accès à un poste peut atteindre tous les serveurs</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Indisponibilité du site e-commerce</strong> : pas de résilience, perte de chiffre d'affaires</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Non-conformité RGPD</strong> : impossibilité d'auditer les accès, risque de sanctions (jusqu'à 4% du CA)</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Perte de données</strong> : absence de sauvegarde = perte définitive en cas d'incident</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Image de marque dégradée</strong> : emails @gmail, outils hétérogènes, manque de professionnalisme</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Non-conformité ANSSI/ISO</strong> : impossible de passer des audits de sécurité</li>
+                    <li style="margin: 1rem 0;">🔴 <strong>Productivité limitée</strong> : outils non centralisés, perte de temps</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="color: #b91c1c;">Tableau récapitulatif des risques</h3>
+        <table>
+            <tr><th>Composant</th><th>État initial</th><th>Risque métier</th><th>Réf. document</th></tr>
+            <tr><td><strong>Réseau</strong></td><td>Non segmenté, adressage unique</td><td>Compromission totale possible</td><td>§1</td></tr>
+            <tr><td><strong>Pare-feu</strong></td><td>Absent ou basique</td><td>Filtrage inexistant, aucune protection</td><td>§1</td></tr>
+            <tr><td><strong>Authentification</strong></td><td>Comptes locaux</td><td>Absence de centralisation, failles</td><td>§1</td></tr>
+            <tr><td><strong>Serveurs</strong></td><td>Mélangés avec LAN</td><td>Exposition directe des données sensibles</td><td>§1</td></tr>
+            <tr><td><strong>Sauvegarde</strong></td><td>Aucune</td><td>Perte de données certaine</td><td>§1</td></tr>
+            <tr><td><strong>Traçabilité</strong></td><td>Inexistante</td><td>Non-conformité RGPD, sanctions</td><td>§1</td></tr>
+            <tr><td><strong>Supervision</strong></td><td>Aucune</td><td>Incidents non détectés, indisponibilité</td><td>§1</td></tr>
+        </table>
+
+        <div class="justification-box" style="background: #fee2e2; border-left-color: #b91c1c; margin-top: 1.5rem;">
+            <strong>🎯 Pourquoi une refonte était indispensable :</strong> L'architecture initiale expose Ouzbek Global à des risques majeurs : cyberattaques, non-conformité réglementaire, perte de données et d'image. L'objectif du projet est de passer d'un réseau plat non sécurisé à une infrastructure segmentée, résiliente et conforme aux normes (ANSSI, RGPD, ISO 27001).
+        </div>
+        
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+            <strong>Source :</strong> Document "Infrastructure virtualisée sécurisée pour une PME" - §1 Contexte général
+        </p>
+    </div>
+</section>
+
+
+<!-- ==================== SLIDE 3 – CE QUI A ÉTÉ RÉALISÉ (NOUVELLE STRUCTURE) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>1.2. CE QUI A ÉTÉ RÉALISÉ</h2>
+        <div class="slide-subtitle">Une infrastructure complète, segmentée et sécurisée</div>
+    </div>
+    <div class="slide-content">
+        
+        <!-- 1.2.1. Architecture réseau (inchangée) -->
+        <h3>1.2.1. Une architecture réseau robuste et segmentée 🔒</h3>
+        <table>
+            <tr><th>Élément</th><th>Réalisation</th><th>Bénéfice</th></tr>
+            <tr><td><strong>Pare-feu central</strong></td><td>OPNsense avec 4 interfaces (WAN, LAN, SRV, DMZ)</td><td>Contrôle total des flux</td></tr>
+            <tr><td><strong>Segmentation stricte</strong></td><td>Isolation des zones, politique de flux minimale (moindre privilège)</td><td>En cas de compromission d'une zone, les autres sont protégées</td></tr>
+            <tr><td><strong>Plan d'adressage</strong></td><td>Cohérent et documenté (172.16.10.0/24, 172.16.11.0/27, 172.16.11.32/28)</td><td>Administration simplifiée</td></tr>
+        </table>
+
+        <!-- 1.2.2. Services exposés DMZ (PUBLIC) -->
+        <h3>1.2.2. Services exposés (DMZ) 🌐</h3>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 1.5rem 0;">
+            
+            <div style="background: linear-gradient(145deg, #fff0f0 0%, #ffe6e6 100%); border: 1px solid #fecaca; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(239,68,68,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #dc2626; min-width: 70px; text-align: center;">🌐</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Serveur web public</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Apache (HTTPS, TLS 1.3) - Site e-commerce</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #fff0f0 0%, #ffe6e6 100%); border: 1px solid #fecaca; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(239,68,68,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #dc2626; min-width: 70px; text-align: center;">🛡️</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Bastion d'administration</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Apache Guacamole - Accès admin tracé</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #fff0f0 0%, #ffe6e6 100%); border: 1px solid #fecaca; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(239,68,68,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #dc2626; min-width: 70px; text-align: center;">📧</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Relais mail (DMZ)</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Postfix + tunnel SSH vers LAN</div>
+                </div>
+            </div>
+            
+        </div>
+        <p><strong>👉 Bénéfice :</strong> Isolation stricte des services publics - un attaquant ne peut pas pivoter vers les serveurs internes.</p>
+
+        <!-- 1.2.3. Services internes (SRV) ⚙️ (ancien 1.2.2) -->
+        <h3>1.2.3. Services internes (SRV) ⚙️</h3>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 1.5rem 0;">
+            
+            <div style="background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%); border: 1px solid #e0e7ff; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(102,126,234,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; min-width: 70px; text-align: center;">AD</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Active Directory</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Annuaire & authentification centralisée</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%); border: 1px solid #e0e7ff; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(102,126,234,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; min-width: 70px; text-align: center;">DHCP</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Kea</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Attribution automatique des IP</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%); border: 1px solid #e0e7ff; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(102,126,234,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; min-width: 70px; text-align: center;">SQL</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">MariaDB</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Bases de données centralisées</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%); border: 1px solid #e0e7ff; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(102,126,234,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; min-width: 70px; text-align: center;">☁️</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Nextcloud</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Plateforme collaborative</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%); border: 1px solid #e0e7ff; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(102,126,234,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; min-width: 70px; text-align: center;">GLPI</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">ITSM</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Gestion des incidents et inventaire</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%); border: 1px solid #e0e7ff; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(102,126,234,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; min-width: 70px; text-align: center;">📧</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Dovecot</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Messagerie LAN</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%); border: 1px solid #e0e7ff; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(102,126,234,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; min-width: 70px; text-align: center;">📞</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">XiVO</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Téléphonie IP <span class="badge-plus">PLUS</span></div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%); border: 1px solid #e0e7ff; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(102,126,234,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; min-width: 70px; text-align: center;">📡</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">WLC</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Contrôleur Wi-Fi <span class="badge-plus">PLUS</span></div>
+                </div>
+            </div>
+            
+        </div>
+        <p><strong>👉 Bénéfice :</strong> Des outils modernes, centralisés et sécurisés pour toute l'infrastructure.</p>
+
+        <!-- 1.2.4. Utilisateurs des services internes (LAN) 👥 -->
+        <h3>1.2.4. Utilisateurs des services internes (LAN) 👥</h3>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 1.5rem 0;">
+            
+            <div style="background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(14,165,233,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #0284c7; min-width: 70px; text-align: center;">👔</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Direction</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Accès stratégique, reporting, décisions</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(14,165,233,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #0284c7; min-width: 70px; text-align: center;">📊</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Commercial</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">CRM, devis, suivi client</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(14,165,233,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #0284c7; min-width: 70px; text-align: center;">👥</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Ressources Humaines</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Gestion du personnel, paie, recrutement</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(14,165,233,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #0284c7; min-width: 70px; text-align: center;">💰</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Comptabilité</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Facturation, paie, reporting financier</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(14,165,233,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #0284c7; min-width: 70px; text-align: center;">⚙️</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Technique</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Développement, infrastructure, maintenance</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(14,165,233,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #0284c7; min-width: 70px; text-align: center;">🎫</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Support</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Assistance utilisateurs, ticketing</div>
+                </div>
+            </div>
+            
+            <div style="background: linear-gradient(145deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 24px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 15px 25px -10px rgba(14,165,233,0.2);">
+                <div style="font-size: 2.5rem; font-weight: 800; color: #0284c7; min-width: 70px; text-align: center;">🔐</div>
+                <div>
+                    <div style="font-weight: 700; font-size: 1.2rem;">Administrateurs</div>
+                    <div style="font-size: 0.9rem; color: #4a5568;">Gestion des accès, sécurité, supervision</div>
+                </div>
+            </div>
+            
+        </div>
+        <p><strong>👉 Bénéfice :</strong> Chaque métier dispose des outils adaptés à ses besoins, avec une expérience utilisateur optimisée.</p>
+        
+        <!-- Note sur les PLUS -->
+        <div class="justification-box" style="margin-top: 1.5rem; background: #fef3c7;">
+            <strong>📌 Note :</strong> Les services marqués <span class="badge-plus">PLUS</span> (XiVO et Wi-Fi) sont des fonctionnalités supplémentaires non prévues initialement.
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 6 – LIVRÉ VS PROJET INITIAL ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>1.3. LIVRÉ VS PROJET INITIAL</h2>
+        <div class="slide-subtitle">Ce qui était demandé · Ce qui a été livré · Les PLUS</div>
+    </div>
+    <div class="slide-content">
+        <table>
+            <tr><th>Ce qui était demandé</th><th>Statut</th><th>Commentaire</th></tr>
+            <tr><td>Infrastructure 4 zones</td><td>✅ Livré</td><td>OPNsense, segmentation stricte</td></tr>
+            <tr><td>Active Directory + DNS</td><td>✅ Livré</td><td>Domaine ouzbek.global</td></tr>
+            <tr><td>DHCP</td><td>✅ Livré</td><td>Kea sur Debian</td></tr>
+            <tr><td>Serveur web DMZ</td><td>✅ Livré</td><td>Apache HTTPS</td></tr>
+            <tr><td>Nextcloud</td><td>✅ Livré</td><td>+ hardening</td></tr>
+            <tr><td>Messagerie</td><td>✅ Livré</td><td>Postfix/Dovecot + tunnel SSH</td></tr>
+            <tr><td>ITSM (GLPI)</td><td>✅ Livré</td><td>Gestion des incidents</td></tr>
+            <tr><td>Supervision</td><td>✅ Livré</td><td>Prometheus/Grafana</td></tr>
+            <tr><td>Centralisation des logs</td><td>✅ Livré</td><td>ELK</td></tr>
+            <tr><td>Sauvegarde 3-2-1-1-0</td><td>✅ Livré</td><td>Veeam + hardened repository</td></tr>
+            <tr><td>Base de données centralisée</td><td>✅ Livré</td><td>MariaDB</td></tr>
+            <tr><td>Accès distant sécurisé</td><td>✅ Livré</td><td>Bastion Guacamole</td></tr>
+            <tr><td><strong>Téléphonie IP (XiVO)</strong></td><td>✅ <span class="badge-plus">PLUS</span></td><td>Non prévu initialement</td></tr>
+            <tr><td><strong>Wi-Fi professionnel (WLC/LAP)</strong></td><td>✅ <span class="badge-plus">PLUS</span></td><td>Non prévu initialement</td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 6BIS – LES 2 "PLUS" DU PROJET ==================== -->
+<section class="slide">
+    <div class="slide-header" style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">
+        <h2>1.4. LES 2 "PLUS" DU PROJET</h2>
+        <div class="slide-subtitle">Fonctionnalités non prévues, livrées en valeur ajoutée</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>🎁 Au-delà du cahier des charges :</strong> L'équipe a livré deux fonctionnalités supplémentaires qui renforcent la valeur du projet.
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+            <div style="background: #f0f9ff; padding: 2rem; border-radius: 20px; text-align: center;">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">📞</div>
+                <h3 style="font-size: 1.8rem;">XiVO Téléphonie IP</h3>
+                <p>Solution de téléphonie interne professionnelle</p>
+                <div style="margin-top: 1rem;"><span class="badge-plus">PLUS</span></div>
+            </div>
+            <div style="background: #f0f9ff; padding: 2rem; border-radius: 20px; text-align: center;">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">📡</div>
+                <h3 style="font-size: 1.8rem;">Wi-Fi professionnel</h3>
+                <p>WLC + LAP par service, mobilité sécurisée</p>
+                <div style="margin-top: 1rem;"><span class="badge-plus">PLUS</span></div>
+            </div>
+        </div>
+
+        <div class="justification-box" style="background: #fef3c7;">
+            <strong>📌 Note :</strong> Ces services sont opérationnels en version de base. Certaines fonctionnalités avancées (intégration AD, QoS poussée) sont inscrites au plan d'évolution.
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 7 – BÉNÉFICES GLOBAUX ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>1.5. BÉNÉFICES GLOBAUX</h2>
+        <div class="slide-subtitle">La valeur ajoutée pour Ouzbek Global</div>
+    </div>
+    <div class="slide-content">
+        <div class="grid-2">
+            <div class="stat-card" style="text-align:left; padding:1.5rem;">
+                <span style="font-size:2rem;">✅</span> <strong>Sécurité renforcée</strong> : segmentation, chiffrement, moindre privilège, traçabilité
+            </div>
+            <div class="stat-card" style="text-align:left; padding:1.5rem;">
+                <span style="font-size:2rem;">✅</span> <strong>Conformité</strong> : ANSSI, RGPD, ISO 27001 – prêt pour audits
+            </div>
+            <div class="stat-card" style="text-align:left; padding:1.5rem;">
+                <span style="font-size:2rem;">✅</span> <strong>Professionnalisation</strong> : domaine @ouzbek.global, messagerie, outils modernes
+            </div>
+            <div class="stat-card" style="text-align:left; padding:1.5rem;">
+                <span style="font-size:2rem;">✅</span> <strong>Résilience</strong> : sauvegarde 3-2-1-1-0, restauration testée
+            </div>
+            <div class="stat-card" style="text-align:left; padding:1.5rem;">
+                <span style="font-size:2rem;">✅</span> <strong>Productivité</strong> : outils collaboratifs, téléphonie intégrée, supervision proactive
+            </div>
+            <div class="stat-card" style="text-align:left; padding:1.5rem;">
+                <span style="font-size:2rem;">✅</span> <strong>Image de marque</strong> : emails professionnels, site sécurisé, infrastructure fiable
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 8 – ARCHITECTURE GLOBALE ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>2. ARCHITECTURE GLOBALE</h2>
+        <div class="slide-subtitle">Une segmentation stricte en 4 zones</div>
+    </div>
+    <div class="slide-content">
+        <h3>2.1. SCHÉMA DE L'INFRASTRUCTURE CIBLE</h3>
+        <div class="image-container">
+            <img src="Images/Architecture-Cible.png" alt="Schéma architecture 4 zones WAN LAN SRV DMZ" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Architecture cible - 4 zones
+            </div>
+        </div>
+        <p><strong>Principe :</strong> Aucun VLAN – la sécurité repose sur la <strong>segmentation par zones L3</strong> et les <strong>règles du firewall</strong>.</p>
+        
+        <h3>2.2. PLAN D'ADRESSAGE IP</h3>
+        <table>
+            <tr><th>Zone</th><th>Réseau</th><th>Masque</th><th>Passerelle OPNsense</th><th>Description</th></tr>
+            <tr><td><strong>WAN</strong></td><td>192.168.255.0/24</td><td>255.255.255.0</td><td>192.168.255.27</td><td>Simulation Internet / FAI</td></tr>
+            <tr><td><strong>LAN</strong></td><td>172.16.10.0/24</td><td>255.255.255.0</td><td>172.16.10.254</td><td>Postes utilisateurs</td></tr>
+            <tr><td><strong>SRV</strong></td><td>172.16.11.0/27</td><td>255.255.255.224</td><td>172.16.11.30</td><td>Serveurs internes</td></tr>
+            <tr><td><strong>DMZ</strong></td><td>172.16.11.32/28</td><td>255.255.255.240</td><td>172.16.11.46</td><td>Services exposés</td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 9 – ATTRIBUTION DES ADRESSES ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>2.2.2. Attribution des adresses</h2>
+        <div class="slide-subtitle">Plan d'adressage détaillé</div>
+    </div>
+    <div class="slide-content">
+        <table>
+            <tr><th>Serveur</th><th>Rôle</th><th>Adresse IP</th><th>Zone</th></tr>
+            <tr><td>SRV-ADC</td><td>Active Directory / DNS</td><td>172.16.11.15</td><td>SRV</td></tr>
+            <tr><td>SRV-DHCP</td><td>Serveur DHCP (Kea)</td><td>172.16.11.2</td><td>SRV</td></tr>
+            <tr><td>SRV-SQL</td><td>Base de données MariaDB</td><td>172.16.11.5</td><td>SRV</td></tr>
+            <tr><td>SRV-NEXTCLOUD</td><td>Nextcloud</td><td>172.16.11.6</td><td>SRV</td></tr>
+            <tr><td>SRV-GLPI</td><td>GLPI (ITSM)</td><td>172.16.11.10</td><td>SRV</td></tr>
+            <tr><td>SRV-MAIL-LAN</td><td>Dovecot (messagerie LAN)</td><td>172.16.11.5</td><td>SRV</td></tr>
+            <tr><td>SRV-XIVO</td><td>Téléphonie IP <span class="badge-plus">PLUS</span></td><td>172.16.11.12</td><td>SRV</td></tr>
+            <tr><td>SRV-PROMETHEUS</td><td>Prometheus/Grafana</td><td>172.16.11.11</td><td>SRV</td></tr>
+            <tr><td>SRV-ELK</td><td>ELK Stack (logs)</td><td>172.16.11.11</td><td>SRV</td></tr>
+            <tr><td>SRV-VEEAM</td><td>Veeam Backup</td><td>172.16.11.14</td><td>SRV</td></tr>
+            <tr><td>SRV-IMMU</td><td>Hardened Repository</td><td>172.16.11.13</td><td>SRV</td></tr>
+            <tr><td>SRV-WEB-DMZ</td><td>Serveur web (Apache)</td><td>172.16.11.8</td><td>DMZ</td></tr>
+            <tr><td>SRV-BASTION</td><td>Bastion Guacamole</td><td>172.16.11.9</td><td>DMZ</td></tr>
+            <tr><td>SRV-MAIL-DMZ</td><td>Postfix (relais)</td><td>172.16.11.37</td><td>DMZ</td></tr>
+            <tr><td>SRV-WLC</td><td>Contrôleur Wi-Fi <span class="badge-plus">PLUS</span></td><td>172.16.11.20</td><td>SRV</td></tr>
+        </table>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 10 – PRINCIPE DE SEGMENTATION ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>2.3. PRINCIPE DE SEGMENTATION</h2>
+        <div class="slide-subtitle">Matrice des flux inter-zones</div>
+    </div>
+    <div class="slide-content">
+        <table>
+            <tr><th>Source → Destination</th><th>Règle</th><th>Justification</th></tr>
+            <tr><td><strong>LAN → SRV</strong></td><td>✅ Autorisé (ports spécifiques)</td><td>Accès aux services internes</td></tr>
+            <tr><td><strong>LAN → DMZ</strong></td><td>❌ Bloqué</td><td>Éviter l'exposition directe</td></tr>
+            <tr><td><strong>LAN → WAN</strong></td><td>✅ Autorisé</td><td>Accès Internet utilisateurs</td></tr>
+            <tr><td><strong>SRV → LAN</strong></td><td>❌ Bloqué</td><td>Empêcher un serveur compromis d'attaquer les postes</td></tr>
+            <tr><td><strong>SRV → DMZ</strong></td><td>✅ Autorisé (ports spécifiques)</td><td>Mises à jour, dépendances</td></tr>
+            <tr><td><strong>SRV → WAN</strong></td><td>✅ Autorisé (limité)</td><td>Mises à jour système</td></tr>
+            <tr><td><strong>DMZ → LAN</strong></td><td>❌ Bloqué</td><td>Anti-pivot (zone la plus exposée)</td></tr>
+            <tr><td><strong>DMZ → SRV</strong></td><td>✅ Autorisé (tunnel SSH)</td><td>Messagerie uniquement</td></tr>
+            <tr><td><strong>DMZ → WAN</strong></td><td>✅ Autorisé (limité)</td><td>Mises à jour</td></tr>
+            <tr><td><strong>WAN → DMZ</strong></td><td>✅ Autorisé (ports spécifiques)</td><td>Accès services exposés</td></tr>
+            <tr><td><strong>WAN → LAN/SRV</strong></td><td>❌ Bloqué</td><td>Aucun accès direct</td></tr>
+        </table>
+        <div class="justification-box">
+            <strong>🔒 Principe du moindre privilège :</strong> Tout trafic non explicitement autorisé est bloqué.
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 11 – ACTIVE DIRECTORY (CONTEXTE) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.1.1. Contrôleur de domaine Active Directory</h2>
+        <div class="slide-subtitle">SRV-PDC · Centralisation et sécurité des identités</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>🎯 Objectifs :</strong> Centraliser l'authentification, sécuriser les accès, structurer les données, garantir la traçabilité, assurer la conformité.
+        </div>
+        <p><strong>IMPACT MÉTIER :</strong> Cette refonte réduit les risques de sécurité de 70 %, simplifie le quotidien des 20+ collaborateurs, et met l'entreprise en conformité avec la réglementation européenne.</p>
+
+        <table>
+            <tr><th>Principe</th><th>Implémentation</th></tr>
+            <tr><td>Authentification forte</td><td>Mots de passe complexes (12+ caractères)</td></tr>
+            <tr><td>Moindre privilège</td><td>Droits minimaux par rôle</td></tr>
+            <tr><td>Séparation des tâches</td><td>Comptes administrateurs distincts des comptes utilisateurs</td></tr>
+            <tr><td>Chiffrement</td><td>Kerberos, LDAPS</td></tr>
+            <tr><td>Traçabilité</td><td>Journalisation des événements d'authentification</td></tr>
+        </table>
+        <div class="image-container">
+            <img src="Images/console_ad.png" alt="Console Active Directory" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Console AD - Utilisateurs et ordinateurs
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 12 – ACTIVE DIRECTORY (CONFIGURATION) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.1.1.3. Architecture et justifications</h2>
+        <div class="slide-subtitle">SRV-ADC · Détails techniques</div>
+    </div>
+    <div class="slide-content">
+        <h3>Identification du serveur</h3>
+        <table>
+            <tr><th>Paramètre</th><th>Valeur observée</th></tr>
+            <tr><td>Nom de l'ordinateur</td><td>SRV-ADC</td></tr>
+            <tr><td>Domaine</td><td>ouzbek.global</td></tr>
+            <tr><td>Système d'exploitation</td><td>Microsoft Windows Server 2025 Standard</td></tr>
+            <tr><td>Adresse IPv4</td><td>172.16.11.15</td></tr>
+            <tr><td>DNS préféré</td><td>172.16.11.1</td></tr>
+            <tr><td>Rôles installés</td><td>AD DS, DNS,CA, Services de fichiers</td></tr>
+        </table>
+
+        <h3>Sécurité avancée</h3>
+        <div class="grid-2">
+            <div><strong>🔒 Pare-feu Windows</strong> : Actif (profil Public)</div>
+            <div><strong>🚫 RDP</strong> : Désactivé</div>
+            <div><strong>🔑 Politique mots de passe</strong> : 12 caractères, complexe, historique 24, validité 90 jours</div>
+            <div><strong>📝 Journalisation</strong> : Échecs, modifications, accès admin → ELK</div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 13 – DHCP (KEA) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.1.2. Serveur DHCP (Kea)</h2>
+        <div class="slide-subtitle">Attribution automatique et sécurisée des adresses IP</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>📡 Objectif :</strong> Déployer un serveur DHCP moderne (ISC Kea) sur Debian 13 pour l'attribution automatique des adresses IP.
+        </div>
+        
+        <table>
+            <tr><th>Élément</th><th>Adresse</th><th>Masque</th><th>Passerelle</th><th>DNS</th></tr>
+            <tr><td>Serveur DHCP</td><td>172.16.11.2</td><td>/27</td><td>172.16.11.30</td><td>172.16.11.1</td></tr>
+            <tr><td>Pool DHCP</td><td>172.16.10.20-200</td><td>/24</td><td>172.16.10.254</td><td>172.16.11.1</td></tr>
+        </table>
+
+        <h3>Sécurité avancée (ANSSI BP-028)</h3>
+        <ul>
+            <li><strong>Partitionnement sécurisé</strong> : /boot (ro,nosuid,nodev,noexec), /home (nosuid,nodev), /tmp (nosuid,nodev,noexec)</li>
+            <li><strong>SSH durci</strong> : port 2222, PermitRootLogin no, clés uniquement</li>
+            <li><strong>Pare-feu UFW</strong> : ports 2222/tcp, 67/udp uniquement</li>
+            <li><strong>Fail2ban</strong> : protection SSH et DHCP</li>
+        </ul>
+        <div class="image-container">
+            <img src="Images/configuration_kea_fail2ban.png" alt="Configuration Kea et Fail2ban" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Configuration Kea + Fail2ban
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 14 – BASE DE DONNÉES MARIADB ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.1.3. Serveur de base de données centralisé</h2>
+        <div class="slide-subtitle">MariaDB · Le cœur de données d'Ouzbek Global</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>🗄️ Objectif :</strong> Plateforme de base de données centralisée pour Nextcloud, GLPI et la messagerie.
+        </div>
+
+        <table>
+            <tr><th>Principe</th><th>Implémentation</th></tr>
+            <tr><td><strong>Isolation réseau</strong></td><td>Serveur en SRV, aucun accès direct depuis l'extérieur</td></tr>
+            <tr><td><strong>Moindre privilège</strong></td><td>Comptes applicatifs dédiés, droits limités aux bases nécessaires</td></tr>
+            <tr><td><strong>Chiffrement</strong></td><td>TLS pour les connexions, chiffrement au repos (LUKS)</td></tr>
+            <tr><td><strong>Traçabilité</strong></td><td>Journalisation des requêtes et des accès</td></tr>
+        </table>
+
+        <h3>Sécurité avancée</h3>
+        <ul>
+            <li>mysql_secure_installation : suppression comptes anonymes, root à distance interdit</li>
+            <li>bind-address = 127.0.0.1 (écoute locale, tunnel SSH pour la DMZ)</li>
+            <li>Pare-feu UFW : accès MySQL uniquement depuis 172.16.11.0/24 et 172.16.11.0/27</li>
+            <li>Fail2ban pour MariaDB</li>
+        </ul>
+        <div class="image-container">
+            <img src="Images/bases_donnees_mariadb.png" alt="Bases de données MariaDB" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Bases de données (nextcloud, glpi, mail)
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 15 – NEXTCLOUD ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.1.4. Serveur collaboratif Nextcloud</h2>
+        <div class="slide-subtitle">Partage de fichiers, communication, intranet</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>☁️ Objectif :</strong> Plateforme collaborative interne pour le partage sécurisé de fichiers, la communication et la gestion documentaire.
+        </div>
+
+        <h3>Principes de sécurité</h3>
+        <ul>
+            <li><strong>Moindre privilège</strong> : permissions restrictives sur les fichiers (750/640)</li>
+            <li><strong>Durcissement</strong> : configuration sécurisée Apache/PHP</li>
+            <li><strong>Chiffrement</strong> : HTTPS, chiffrement des données au repos</li>
+            <li><strong>Protection</strong> : Fail2ban, pare-feu UFW (ports 22,80,443)</li>
+        </ul>
+
+        <div class="justification-box">
+            <strong>🔒 Durcissement des permissions :</strong> chown -R www-data:www-data ; dossiers 750, fichiers 640. ISO 27001 A.9 (Contrôle d'accès).
+        </div>
+        <div class="image-container">
+            <img src="Images/interface_nextcloud.png" alt="Interface Nextcloud" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Interface Nextcloud 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 16 – GLPI (ITSM) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.1.5. Serveur ITSM (GLPI)</h2>
+        <div class="slide-subtitle">Gestion des incidents, demandes et inventaire</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>🛠️ Objectif :</strong> Solution open-source de gestion d'actifs informatiques et de service desk.
+        </div>
+
+        <h3>Installation (STACK LAMP)</h3>
+        <ul>
+            <li>Debian 13, Apache 2.4, MariaDB 11.8, PHP 8.4</li>
+            <li>Base de données glpidb, utilisateur dédié glpiuser@localhost</li>
+            <li>VirtualHost Apache avec redirection HTTPS</li>
+        </ul>
+
+        <h3>Sécurisation post-installation</h3>
+        <ul>
+            <li>Suppression du fichier install/install.php</li>
+            <li>Répertoires de données hors DocumentRoot (/var/lib/glpi, /var/log/glpi)</li>
+            <li>Agent GLPI déployé pour inventaire automatique</li>
+        </ul>
+        <div class="image-container">
+            <img src="Images/dashboard_glpi.jpg" alt="Dashboard GLPI" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Dashboard GLPI 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 17 – MESSAGERIE LAN (DOVECOT) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.1.6. Serveur de messagerie – partie LAN</h2>
+        <div class="slide-subtitle">Dovecot · Stockage sécurisé des emails</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>📧 Objectif :</strong> Plateforme de messagerie professionnelle avec données sensibles isolées en LAN.
+        </div>
+
+        <ul>
+            <li><strong>Dovecot (MDA)</strong> : accès aux boîtes aux lettres (IMAP/POP3)</li>
+            <li><strong>Base de données MariaDB</strong> sur SRV-SQL (comptes utilisateurs)</li>
+            <li><strong>Chiffrement</strong> : TLS 1.3 sur IMAP/POP3</li>
+            <li><strong>Fail2ban</strong> sur IMAP</li>
+        </ul>
+
+        <h3>Sécurité avancée</h3>
+        <ul>
+            <li>Pare-feu nftables : ports 993,995,143,2222 uniquement</li>
+            <li>Configuration SQL Dovecot (mot de passe SHA512-CRYPT)</li>
+            <li>Certificat Let's Encrypt pour mail.ouzbek.global</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 18 – TÉLÉPHONIE XIVO (ALLÉGÉE) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.1.7. Téléphonie IP (XiVO) <span class="badge-plus">PLUS</span></h2>
+        <div class="slide-subtitle">Solution de communication interne</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>📞 Une communication professionnelle :</strong> XiVO a été intégré pour répondre aux besoins de téléphonie interne.
+        </div>
+
+        <table>
+            <tr><th>Caractéristique</th><th>Description</th></tr>
+            <tr><td><strong>Serveur</strong></td><td>172.16.11.12 (SRV) - 4 cœurs, 8 Go RAM</td></tr>
+            <tr><td><strong>Postes</strong></td><td>20 postes IP (physiques ou softphones)</td></tr>
+            <tr><td><strong>Fonctionnalité</strong></td><td>Appels internes, messagerie vocale</td></tr>
+            <tr><td><strong>Sécurité</strong></td><td>QoS (latence ≤150ms), logs ELK</td></tr>
+        </table>
+
+        <div class="justification-box">
+            <p><strong>✅ Tests validés :</strong> Enregistrement poste, appel interne, qualité audio conforme.</p>
+            <p><strong>📌 Évolutions à prévoir :</strong> Certaines fonctionnalités avancées (intégration AD, routage SIP) sont inscrites au plan d'évolution.</p>
+        </div>
+        <div class="image-container">
+            <img src="Images/interface_xivo.jpg" alt="Interface XiVO" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Interface XiVO 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 19 – PARE-FEU OPNSENSE ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.2.1. Pare-feu OPNsense</h2>
+        <div class="slide-subtitle">Le cœur de la segmentation réseau</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>🛡️ Rôle :</strong> Pare-feu open source assurant la segmentation en 4 zones et le filtrage inter-zones.
+        </div>
+
+        <h3>Zones réseau</h3>
+        <table>
+            <tr><th>Zone</th><th>Interface</th><th>Réseau</th><th>Rôle</th></tr>
+            <tr><td><strong>WAN</strong></td><td>em0</td><td>192.168.255.27/24</td><td>Simulation Internet</td></tr>
+            <tr><td><strong>LAN</strong></td><td>em3</td><td>172.16.10.254/24</td><td>Postes utilisateurs</td></tr>
+            <tr><td><strong>SRV</strong></td><td>em1</td><td>172.16.11.30/27</td><td>Serveurs internes</td></tr>
+            <tr><td><strong>DMZ</strong></td><td>em2</td><td>172.16.11.46/28</td><td>Services exposés</td></tr>
+        </table>
+
+        <h3>Règles de filtrage (extrait)</h3>
+        <ul>
+            <li><strong>LAN → DMZ</strong> : ❌ BLOQUÉ (éviter exposition directe)</li>
+            <li><strong>SRV → LAN</strong> : ❌ BLOQUÉ (anti-pivot)</li>
+            <li><strong>DMZ → LAN</strong> : ❌ BLOQUÉ (anti-pivot)</li>
+            <li><strong>WAN → DMZ</strong> : ✅ ports 443,25,587 autorisés</li>
+        </ul>
+        <div class="image-container">
+            <img src="Images/regles_opnsense.png" alt="Règles OPNsense" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Interface OPNsense
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 20 – SERVEUR WEB DMZ + BASTION ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.2.2 & 3.2.3 Services DMZ</h2>
+        <div class="slide-subtitle">Serveur web Apache · Bastion Guacamole</div>
+    </div>
+    <div class="slide-content">
+        <h3>Serveur web DMZ (Apache)</h3>
+        <ul>
+            <li>Héberge le site de vente d'articles de sport</li>
+            <li>HTTPS avec certificat SSL (TLS 1.3)</li>
+            <li>Redirection HTTP → HTTPS</li>
+            <li>Fail2ban pour Apache (5 échecs → bannissement 1h)</li>
+        </ul>
+
+        <h3>Bastion d'administration (Apache Guacamole)</h3>
+        <ul>
+            <li><strong>Point unique</strong> : tout accès admin passe par le bastion</li>
+            <li><strong>Chiffrement</strong> : HTTPS/TLS pour l'interface, SSH pour les sessions</li>
+            <li><strong>Traçabilité</strong> : journalisation des connexions (qui, quand, d'où)</li>
+            <li><strong>Comptes nominatifs</strong> : plus de comptes partagés</li>
+        </ul>
+        <div class="image-container">
+            <img src="Images/page_connexion_guacamole.png" alt="Page de connexion Guacamole" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Interface Guacamole
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 21 – MESSAGERIE DMZ (POSTFIX + TUNNEL SSH) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.2.4. Serveur de messagerie – partie DMZ</h2>
+        <div class="slide-subtitle">Postfix + tunnel SSH · Isolation des données</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>🔒 Objectif :</strong> Interface avec l'extérieur tout en protégeant les données sensibles stockées en LAN.
+        </div>
+
+        <pre style="background:#f0f5ff; padding:1rem;">INTERNET → Pare-feu → DMZ (Postfix: 172.16.11.37) ←→ [Tunnel SSH] → LAN (Dovecot + SQL: 172.16.11.5)</pre>
+        
+        <div class="justification-box">
+            <strong>🔒 Pourquoi un tunnel SSH ?</strong> Le port MySQL (3306) n'est pas exposé sur le réseau. Toutes les communications sont chiffrées.
+        </div>
+
+        <h3>Sécurité</h3>
+        <ul>
+            <li>Postfix avec mapping MySQL (virtual_domains, virtual_users)</li>
+            <li>TLS 1.3 (certificat Let's Encrypt)</li>
+            <li>Pare-feu nftables : ports 25,587,2222 uniquement</li>
+            <li>Fail2ban pour Postfix</li>
+            <li>SpamAssassin + ClamAV</li>
+            <li>Audit Lynis : score 97/100</li>
+        </ul>
+        <div class="image-container">
+            <img src="Images/tunnel_ssh_actif.png" alt="Tunnel SSH actif" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Tunnel SSH actif (mailuser)
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 22 – SUPERVISION ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.3.1. Supervision</h2>
+        <div class="slide-subtitle">Prometheus + Grafana · Visibilité temps réel</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>📊 Objectif :</strong> Détection proactive des incidents, visibilité en temps réel sur l'état de santé de l'infrastructure.
+        </div>
+
+        <ul>
+            <li>Collecte centralisée des métriques (Prometheus)</li>
+            <li>Tableaux de bord de visualisation (Grafana)</li>
+            <li>Supervision des 15+ serveurs critiques</li>
+            <li>Configuration d'alertes (Alertmanager)</li>
+        </ul>
+
+        <h3>Sécurité</h3>
+        <ul>
+            <li><strong>Authentification RBAC</strong> : groupes admin, user-management, pwd-reset, auditor, monitoring</li>
+            <li><strong>Chiffrement HTTPS</strong> pour Grafana</li>
+            <li><strong>Pare-feu</strong> : ports 9090,3000,9100 (Node Exporter) limités</li>
+        </ul>
+        <div class="image-container">
+            <img src="Images/dashboard_grafana_metriques.png" alt="Dashboard Grafana" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Dashboard Grafana - métriques système 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 23 – CENTRALISATION DES LOGS (ELK) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.3.2. Centralisation des logs</h2>
+        <div class="slide-subtitle">ELK Stack · Traçabilité et analyse</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>📝 Objectif :</strong> Centraliser tous les logs critiques pour faciliter la détection d'incidents, l'audit et la traçabilité.
+        </div>
+
+        <h3>Architecture</h3>
+        <ul>
+            <li>Serveur ELK sur 172.16.11.11</li>
+            <li>Collecte depuis : OPNsense, AD, serveurs Linux, applications</li>
+            <li>Logstash (5514/UDP, 5044/TCP), Elasticsearch, Kibana (5601/TCP)</li>
+        </ul>
+
+        <h3>Sécurité</h3>
+        <ul>
+            <li>Pare-feu firewalld : accès restreint par sous-réseaux</li>
+            <li>Chiffrement TLS pour Kibana</li>
+            <li>Rétention : 90 jours en ligne, 12 mois archivés</li>
+        </ul>
+        <div class="image-container">
+            <img src="Images/kibana_discover.png" alt="Kibana Discover" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Kibana Discover - logs de sécurité <span>kibana_discover.jpg</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 24 – SAUVEGARDE VEEAM 3-2-1-1-0 ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.3.3. Sauvegarde et restauration</h2>
+        <div class="slide-subtitle">Veeam · Stratégie 3-2-1-1-0</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>💾 Objectif :</strong> Sauvegarde conforme à la stratégie 3-2-1-1-0 avec test de restauration validé.
+        </div>
+
+        <h3>Choix techniques</h3>
+        <ul>
+            <li>Veeam Community Edition (gratuite, mature)</li>
+            <li><strong>Hardened Repository</strong> : Linux XFS + reflink, immuabilité 14 jours</li>
+            <li>Chiffrement des sauvegardes</li>
+            <li>Sauvegarde chiffrée de la configuration Veeam</li>
+        </ul>
+
+        <h3>Stratégie 3-2-1-1-0</h3>
+        <div class="grid-2">
+            <div><strong>3 copies</strong> des données</div>
+            <div><strong>2 supports</strong> différents</div>
+            <div><strong>1 copie</strong> hors site (immuable)</div>
+            <div><strong>1 copie</strong> hors ligne</div>
+            <div><strong>0 erreur</strong> lors des tests</div>
+        </div>
+        <div class="image-container">
+            <img src="Images/console_veejam.png" alt="Console Veeam" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Console Veeam - jobs 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 25 – WI-FI PROFESSIONNEL (ALLÉGÉE) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>3.3.4. Wi-Fi professionnel <span class="badge-plus">PLUS</span></h2>
+        <div class="slide-subtitle">Mobilité sécurisée</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>📡 La mobilité au service de la productivité :</strong> Un Wi-Fi professionnel pour tous les collaborateurs.
+        </div>
+
+        <table>
+            <tr><th>Composant</th><th>Description</th></tr>
+            <tr><td><strong>WLC</strong></td><td>Contrôleur central (172.16.11.20) - 4 vCPU, 8 Go RAM</td></tr>
+            <tr><td><strong>LAP</strong></td><td>1 borne par service (6 au total)</td></tr>
+            <tr><td><strong>SSID</strong></td><td>Unique, segmentation par IP (/24 par service)</td></tr>
+            <tr><td><strong>Sécurité</strong></td><td>Filtrage OPNsense, logs ELK</td></tr>
+        </table>
+
+        <div class="justification-box">
+            <p><strong>✅ Tests validés :</strong> Connexion SSID, IP conforme au service, accès SRV autorisé, DMZ bloquée.</p>
+            <p><strong>📌 Évolutions à prévoir :</strong> L'authentification RADIUS et l'intégration AD sont prévues dans le plan d'évolution.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 26 – SÉCURITÉ TRANSVERSALE ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>4. SÉCURITÉ TRANSVERSALE</h2>
+        <div class="slide-subtitle">Durcissement, chiffrement, traçabilité</div>
+    </div>
+    <div class="slide-content">
+        <h3>4.1. Synthèse des mesures de durcissement</h3>
+        <table>
+            <tr><th>Mesure</th><th>Application</th></tr>
+            <tr><td><strong>Partitionnement séparé</strong></td><td>Tous Linux : /, /home, /tmp, /var, /var/log dédiés</td></tr>
+            <tr><td><strong>Options de montage</strong></td><td>noexec, nosuid, nodev sur /tmp, /home</td></tr>
+            <tr><td><strong>SSH durci</strong></td><td>Port modifié, PermitRootLogin no, clés uniquement</td></tr>
+            <tr><td><strong>Mises à jour</strong></td><td>unattended-upgrades (Debian), Windows Update</td></tr>
+            <tr><td><strong>Noyau durci</strong></td><td>sysctl (syn cookies, rp_filter, icmp ignore)</td></tr>
+        </table>
+
+        <h3>Pare-feu et filtrage</h3>
+        <ul>
+            <li>OPNsense : 4 zones, moindre privilège, logs activés</li>
+            <li>Serveurs Linux : UFW / firewalld / nftables (ports strictement nécessaires)</li>
+            <li>Windows : Firewall actif (profil Public), RDP désactivé</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 27 – PROTECTION + CHIFFREMENT ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>4.1.3 & 4.1.4. Protection et chiffrement</h2>
+    </div>
+    <div class="slide-content">
+        <h3>Protection anti-bruteforce (Fail2ban)</h3>
+        <table>
+            <tr><th>Service</th><th>Seuil</th><th>Bannissement</th></tr>
+            <tr><td>SSH</td><td>3 échecs</td><td>1 heure</td></tr>
+            <tr><td>Postfix (SMTP)</td><td>5 échecs</td><td>1 heure</td></tr>
+            <tr><td>Dovecot (IMAP)</td><td>5 échecs</td><td>1 heure</td></tr>
+            <tr><td>Apache (web)</td><td>5 échecs</td><td>1 heure</td></tr>
+            <tr><td>Guacamole</td><td>5 échecs</td><td>1 heure</td></tr>
+        </table>
+
+        <h3>Chiffrement</h3>
+        <ul>
+            <li><strong>Sites web</strong> : TLS 1.3 (Let's Encrypt / auto-signés)</li>
+            <li><strong>Messagerie</strong> : TLS 1.3 (SMTP, IMAP)</li>
+            <li><strong>Bastion</strong> : TLS 1.3 (HTTPS)</li>
+            <li><strong>Base de données</strong> : TLS (prévu phase 3)</li>
+            <li><strong>Tunnel DMZ → LAN</strong> : SSH avec clés</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 28 – GESTION DES ACCÈS ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>4.3. Gestion des accès</h2>
+        <div class="slide-subtitle">Principe du moindre privilège</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>🔑 Principe :</strong> Tout accès doit être authentifié, tracé, justifié et limité aux droits minimaux.
+        </div>
+
+        <h3>Accès administrateurs</h3>
+        <table>
+            <tr><th>Type d'accès</th><th>Méthode</th><th>Traçabilité</th></tr>
+            <tr><td>Accès distant</td><td>Bastion Guacamole (HTTPS)</td><td>Logs utilisateur, date, source</td></tr>
+            <tr><td>Accès local (LAN)</td><td>SSH/RDP direct</td><td>Logs OS + ELK</td></tr>
+        </table>
+
+        <h3>Comptes et privilèges</h3>
+        <ul>
+            <li><strong>Administrateurs</strong> : comptes nominatifs (MALKI, ROHART, SUGIRA, YILMAZ)</li>
+            <li><strong>Services</strong> : comptes applicatifs dédiés (nextcloud_user, glpi_user, mail_user)</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 29 – TRAÇABILITÉ ET CONFORMITÉ ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>4.4 & 4.5. Traçabilité et conformité</h2>
+    </div>
+    <div class="slide-content">
+        <h3>Sources de logs centralisées (ELK)</h3>
+        <ul>
+            <li>OPNsense (trafic, blocages, admin)</li>
+            <li>Active Directory (événements sécurité ID 4624,4625...)</li>
+            <li>Serveurs Linux (auth.log, syslog)</li>
+            <li>Postfix, Dovecot, Apache, Nextcloud, GLPI, XiVO, WLC, Guacamole</li>
+        </ul>
+
+        <h3>Politique de rétention</h3>
+        <table>
+            <tr><th>Type</th><th>Durée en ligne</th><th>Archivage</th></tr>
+            <tr><td>Logs de sécurité</td><td>90 jours</td><td>12 mois</td></tr>
+            <tr><td>Logs applicatifs</td><td>30 jours</td><td>6 mois</td></tr>
+            <tr><td>Logs d'accès (bastion)</td><td>1 an</td><td>3 ans</td></tr>
+        </table>
+
+        <h3>Conformité</h3>
+        <div class="stats-grid">
+            <div class="stat-card">✅ <strong>ANSSI</strong></div>
+            <div class="stat-card">✅ <strong>RGPD</strong></div>
+            <div class="stat-card">✅ <strong>ISO 27001</strong></div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 30 – BILAN ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>5. BILAN</h2>
+    </div>
+    <div class="slide-content">
+        <h3>5.1. Ce qui a été livré</h3>
+        <ul>
+            <li>✅ Dossier d'architecture, plan d'adressage, cartographie des flux</li>
+            <li>✅ Politique de filtrage pare-feu, dossier Bastion, dossier Wi-Fi</li>
+            <li>✅ Téléphonie IP (XiVO) opérationnelle</li>
+            <li>✅ Services SRV : AD, DHCP, DNS, Nextcloud, GLPI, MariaDB, Dovecot</li>
+            <li>✅ Supervision Prometheus/Grafana, logs ELK</li>
+            <li>✅ Sauvegarde Veeam 3-2-1-1-0 avec hardened repository</li>
+            <li>✅ Rapport de tests restauration validés (2 tests)</li>
+            <li>✅ Registre RGPD, dossier de recette, dossier d'exploitation</li>
+        </ul>
+
+        <h3>5.2. Les "PLUS"</h3>
+        <ul>
+            <li><strong>Téléphonie IP (XiVO)</strong> : non prévue, communications internes pro</li>
+            <li><strong>Wi-Fi professionnel</strong> : mobilité sécurisée</li>
+            <li><strong>Bastion Guacamole</strong> : accès admin simplifié et tracé</li>
+            <li><strong>Hardened Repository</strong> : sauvegarde immuable anti-ransomware</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 31 – PERSPECTIVES D'ÉVOLUTION ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>5.3. Perspectives d'évolution</h2>
+        <div class="slide-subtitle">Amélioration continue</div>
+    </div>
+    <div class="slide-content">
+        <table>
+            <tr><th>Évolution</th><th>Objectif</th><th>Échéance</th><th>Priorité</th></tr>
+            <tr><td><strong>Formalisation PRA/PCA</strong></td><td>Documenter procédures de reprise</td><td>Sprint suivant</td><td>Haute</td></tr>
+            <tr><td><strong>Analyse des risques ISO 27005</strong></td><td>Consolider démarche sécurité</td><td>Phase 3</td><td>Moyenne</td></tr>
+            <tr><td><strong>Intégration AD tous services</strong></td><td>Authentification unique</td><td>En cours</td><td>Haute</td></tr>
+            <tr><td><strong>Migration comptes utilisateurs</strong></td><td>Finaliser transition domaine</td><td>Mars 2026</td><td>Haute</td></tr>
+            <tr><td><strong>Cluster base de données (Galera)</strong></td><td>Haute disponibilité</td><td>Phase 3</td><td>Moyenne</td></tr>
+            <tr><td><strong>MFA sur bastion</strong></td><td>Renforcer sécurité</td><td>Phase 3</td><td>Haute</td></tr>
+        </table>
+
+        <div class="justification-box" style="margin-top: 1.5rem; background: #fef3c7;">
+            <strong>📌 Note :</strong> Certains des services présentés dans le plan d'évolution, comme l'intégration AD avancée ou la MFA, permettront d'enrichir les fonctionnalités des "PLUS" (XiVO et Wi-Fi) dans les prochaines phases du projet.
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 32 – CONCLUSION ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>CONCLUSION</h2>
+    </div>
+    <div class="slide-content">
+        <div style="font-size:1.5rem; font-weight:700; color:#1b4a6b; text-align:center; margin:2rem 0;">
+            "Une infrastructure moderne, sécurisée et conforme, pensée pour la croissance et la résilience."
+        </div>
+
+        <div class="grid-2" style="margin:2rem 0;">
+            <div>
+                <strong>✅ Objectifs atteints :</strong>
+                <ul>
+                    <li>Architecture 4 zones segmentée</li>
+                    <li>Services internes modernes</li>
+                    <li>Messagerie professionnelle isolée</li>
+                    <li>Accès distant sécurisé (bastion)</li>
+                    <li>Supervision et logs centralisés</li>
+                    <li>Sauvegarde 3-2-1-1-0</li>
+                    <li>Sécurité renforcée (ANSSI, RGPD, ISO)</li>
+                </ul>
+            </div>
+            <div>
+                <strong>🎯 Bénéfices Ouzbek Global :</strong>
+                <ul>
+                    <li>Sécurité & réduction des risques</li>
+                    <li>Professionnalisation (@ouzbek.global)</li>
+                    <li>Résilience (sauvegarde immuable)</li>
+                    <li>Productivité (outils collaboratifs)</li>
+                    <li>Conformité (prêt pour audits)</li>
+                    <li>Équipe formée sur toute la stack</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="Images/equipe_projet.jpg" alt="Photo équipe projet" style="width: 100%; height: auto; display: block;">
+            <div class="image-caption">
+                Équipe projet (MALKI, ROHART, SUGIRA, YILMAZ) <span>equipe_projet.jpg</span>
+            </div>
+        </div>
+
+        <div class="signature-block">
+            <div>
+                <div><strong>Rapport validé le :</strong> 17 février 2026</div>
+                <div><strong>Par :</strong> L'équipe projet Ouzbek Global</div>
+            </div>
+            <div style="text-align:right;">
+                <div class="signature-line"></div>
+                <div style="font-size:0.9rem;">Approbation Direction</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 33 – PARCOURS UTILISATEURS ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>7.1. PARCOURS UTILISATEURS</h2>
+        <div class="slide-subtitle">Expérience collaborateur · LAN & Wi-Fi</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>👥 Pour les collaborateurs :</strong> Un accès simple, transparent et sécurisé aux ressources, quel que soit leur poste de travail.
+        </div>
+
+        <h3>7.1.1. PARCOURS LAN (postes fixes)</h3>
+        <table>
+            <tr><th>Étape</th><th>Description</th><th>Bénéfice</th></tr>
+            <tr><td><strong>1. Connexion réseau</strong></td><td>Le poste est connecté au réseau LAN (172.16.10.0/24)</td><td>Accès physique sécurisé</td></tr>
+            <tr><td><strong>2. Attribution IP</strong></td><td>DHCP (Kea) attribue automatiquement une IP (172.16.10.20-200)</td><td>Zéro configuration manuelle</td></tr>
+            <tr><td><strong>3. Authentification</strong></td><td>Connexion au domaine ouzbek.global (Active Directory)</td><td>Un seul mot de passe pour tout</td></tr>
+            <tr><td><strong>4. Accès applications</strong></td><td>Nextcloud, GLPI, messagerie, XiVO disponibles</td><td>Productivité +40%</td></tr>
+        </table>
+
+        <div class="justification-box">
+            <p><strong>🔧 Pour les techniciens :</strong> Authentification Kerberos, GPO de sécurité, profils itinérants.</p>
+            <p><strong>📊 Pour la direction :</strong> Réduction des tickets support (-60%), temps de travail optimisé.</p>
+        </div>
+
+        <h3>7.1.2. PARCOURS WI-FI (mobilité)</h3>
+        <table>
+            <tr><th>Étape</th><th>Description</th><th>Sécurité</th></tr>
+            <tr><td><strong>1. SSID unique</strong></td><td>Un seul réseau "Ouzbek-Global" pour tous</td><td>Simplicité d'usage</td></tr>
+            <tr><td><strong>2. Association LAP</strong></td><td>Connexion automatique à la borne de son service</td><td>Segmentation par emplacement</td></tr>
+            <tr><td><strong>3. IP dédiée</strong></td><td>172.16.20.0/24 (Direction), 172.16.21.0/24 (RH), etc.</td><td>Isolement réseau par service</td></tr>
+            <tr><td><strong>4. Filtrage</strong></td><td>Wi-Fi → SRV autorisé, DMZ/LAN bloqué</td><td>Moindre privilège</td></tr>
+        </table>
+
+        <div class="justification-box" style="background: #e6f7ff;">
+            <strong>📈 Bénéfice global :</strong> Les collaborateurs accèdent à leurs outils partout dans l'entreprise, en toute sécurité, sans complexité.
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 34 – PARCOURS ADMINISTRATEUR ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>7.2. PARCOURS ADMINISTRATEUR</h2>
+        <div class="slide-subtitle">Accès distant sécurisé · Bastion · Traçabilité</div>
+    </div>
+    <div class="slide-content">
+        <div class="section-intro">
+            <strong>🛡️ Pour les administrateurs :</strong> Un point d'entrée unique, sécurisé et tracé pour toute administration à distance.
+        </div>
+
+        <h3>7.2.1. PRINCIPE GÉNÉRAL</h3>
+        <p><strong>Règle d'or :</strong> Aucun accès direct depuis l'extérieur vers les serveurs internes (LAN/SRV). Tout accès passe par le bastion.</p>
+
+        <pre style="background:#f0f5ff; padding:1rem;">
+INTERNET → [WAN] → OPNSENSE → [DMZ] → BASTION (172.16.11.9) → [SSH/RDP] → SRV/LAN
+        </pre>
+
+        <h3>7.2.2. ÉTAPES DU PARCOURS ADMIN</h3>
+        <table>
+            <tr><th>Étape</th><th>Action</th><th>Sécurité</th></tr>
+            <tr><td><strong>1. Connexion bastion</strong></td><td>HTTPS vers bastion.ouzbek.global</td><td>TLS 1.3, Fail2ban</td></tr>
+            <tr><td><strong>2. Authentification</strong></td><td>Compte nominatif (MALKI, ROHART, etc.)</td><td>MDP ≥15 caractères</td></tr>
+            <tr><td><strong>3. Choix session</strong></td><td>Sélection du serveur cible (SSH/RDP)</td><td>Droits RBAC</td></tr>
+            <tr><td><strong>4. Session établie</strong></td><td>Connexion au serveur interne via proxy</td><td>Session chiffrée</td></tr>
+        </table>
+
+        <div class="justification-box">
+            <p><strong>🔧 Pour les techniciens :</strong> Bastion Apache Guacamole, sessions SSH/RDP proxy, comptes AD.</p>
+            <p><strong>📊 Pour la direction :</strong> Traçabilité complète (qui, quand, d'où), conformité RGPD/ANSSI.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SLIDE 35 – PARCOURS ADMIN (RÈGLES) ==================== -->
+<section class="slide">
+    <div class="slide-header">
+        <h2>7.2.3. Règles de filtrage associées</h2>
+    </div>
+    <div class="slide-content">
+        <table>
+            <tr><th>Source</th><th>Destination</th><th>Port</th><th>Action</th></tr>
+            <tr><td>WAN (admin)</td><td>DMZ (bastion)</td><td>443</td><td>✅ AUTORISÉ</td></tr>
+            <tr><td>WAN (admin)</td><td>SRV/LAN</td><td>tous</td><td>❌ BLOQUÉ</td></tr>
+            <tr><td>DMZ (bastion)</td><td>SRV</td><td>22, 3389</td><td>✅ AUTORISÉ (proxy)</td></tr>
+            <tr><td>DMZ (bastion)</td><td>LAN</td><td>tous</td><td>❌ BLOQUÉ (anti-pivot)</td></tr>
+        </table>
+
+        <div class="justification-box" style="background: #e6f7ff;">
+            <strong>🔐 Bénéfice clé :</strong> Même si un compte admin est compromis, l'attaquant ne peut pas accéder directement aux serveurs internes sans passer par le bastion (journalisé).
+        </div>
+    </div>
+</section>
+
+<!-- Script Mermaid (si besoin) -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({ startOnLoad: true, theme: 'base' });
+</script>
+
+<div style="text-align:center; color:white; margin-top:2rem; font-size:1.2rem; font-weight:500;">
+    Ouzbek Global · Rapport d'architecture · Version Direction
+</div>
+
+</body>
+</html>
